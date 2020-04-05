@@ -13,6 +13,10 @@ To run the bot set the following environment variables:
 
 1.  `collectdAddress` - The address of the collectd server
 2.  `collectdPort` - The port of the collectd server
+3.  `clientID` - The client id
+4.  `clientSecret` - The client secret
+5.  `accessToken` - The access token
+6.  `baseURL` - The base URL
 
 Then type the following command:
 

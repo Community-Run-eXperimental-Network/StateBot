@@ -25,8 +25,19 @@ def getConfiguration():
         print("An integer for the collectd server port is needed")
         return None
     
+    # Get the clientID
+    clientID = os.getenv("clientID")
+
+    # Get the client secret
+    clientSecret = os.getenv("clientSecret")
+
+    # Get the access token
+    accessToken = os.getenv("accessToken")
+
+    # Get the base URL
+    baseURL = os.getenv("baseURL")
     
-    return {"address" : collectdAddress, "port" : collectdPort}
+    return {"address" : collectdAddress, "port" : collectdPort, "clientID" : clientID, "clientSecret" : clientSecret, "accessToken" : accessToken, "baseURL" : baseURL}
 
 # Initializes the bot and starts it
 def init():
@@ -37,6 +48,6 @@ def init():
         print("Exiting, invalid configuration...")
         exit()
     else:
-        botRuntime.botStart()
+        botRuntime.botStart(configuration["address"], configuration["port"], configuration["clientID"], configuration["clientSecret"], configuration["accessToken"], configuration["baseURL"])
 
 init()
