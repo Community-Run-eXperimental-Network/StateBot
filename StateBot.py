@@ -1,4 +1,5 @@
 import os
+import botRuntime
 
 # Returns the bot parameters
 def getConfiguration():
@@ -27,10 +28,6 @@ def getConfiguration():
     
     return {"address" : collectdAddress, "port" : collectdPort}
 
-# Runs the bot code
-def botStart():
-    pass
-
 # Initializes the bot and starts it
 def init():
     # Get the configuration and check if it is valid
@@ -40,6 +37,6 @@ def init():
         print("Exiting, invalid configuration...")
         exit()
     else:
-        botStart()
+        botRuntime.botStart()
 
 init()
